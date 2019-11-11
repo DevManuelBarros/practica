@@ -1,0 +1,22 @@
+{% extends "vistaprevia/plantilla.html" %}
+{% block content %}
+<div class="container">
+<div class="jumbotron">
+<h2>Bienvenido a: {{ contenido.nombre_sitio }} </h2>
+</div>
+</div>
+
+<main class="container">
+<div class="row">
+    <section class="col-12" style="background-color: #25b98a; color : #fff;">
+{% if para_minorista.incremento == '10' %}
+    <h2>El incremento para minorista es del {{ para_minorista.incremento }}%!</h2>
+{% elif para_minorista.incremento == '20' %}
+    <h2>El incremento para minorista es del {{ para_minorista.incremento }}%!</h2>
+{% else %}
+    <h2>El incremento para minorista es del {{ para_minorista.incremento }}%!</h2>
+{% endif %}
+</section>
+</div>
+</main>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "vistaprevia/css/style.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "vistaprevia/css/bootstrap.css" %}" />
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}
+    {% if page_title %}
+        {{ page_title }} -
+    {% endif %}
+        {{ site_name }}
+{% endblock title %}
+    </title>
+    <meta name="keywords" content="{{ palabras_claves }}" />
+    <meta name="description" content="{{ descripcion }}" />
+    <script type="text/javascript" src="{% static 'vistaprevia/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vistaprevia/js/bootstrap.js' %}"></script>
+</head>
+<body>
+{% block contenedor %}
+
+{% endblock contenedor %}
+</body>
+</html>
+
