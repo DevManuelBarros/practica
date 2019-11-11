@@ -1,0 +1,18 @@
+{% extends "vistaprevia/plantilla.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Pagina de contacto</h1>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <section class="col-12" style="background-color: #25b89a; color: #fff;">
+                <h2>Aquí va el formulario</h2>
+                <a href="{% url 'index' %}" class="btn btn-info btn-md">Home</a>
+            </section>
+        </div>
+    </main>
+{% endblock content %}

@@ -5,6 +5,9 @@ from django.template import RequestContext
 #def index(request):
 #   return HttpResponse("Hola Mundo!")
 
+def contacto(request):
+    return render(request, 'vistaprevia/contacto.html')
+
 def index(request):
     contenido = {'nombre_sitio' : 'LibrosOnline' }
     para_minorista = {'tipo_usuario' : 'minorista', 'incremento' : '25'}

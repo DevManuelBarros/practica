@@ -2,3 +2,5 @@ librosonlineenv/*
 librosonline/__pycache__/*
 vistaprevia/__pycache__/*
 db.sqlite3
+env/*
+.vscode/*
