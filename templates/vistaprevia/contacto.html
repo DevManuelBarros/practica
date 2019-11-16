@@ -1,5 +1,6 @@
 {% extends "vistaprevia/plantilla.html" %}
-
+{% load static %}
+{% load i18n %}
 {% block content %}
     <div class="container">
         <div class="jumbotron">
@@ -7,12 +8,40 @@
         </div>
     </div>
 
-    <main class="container">
-        <div class="row">
-            <section class="col-12" style="background-color: #25b89a; color: #fff;">
-                <h2>Aquí va el formulario</h2>
-                <a href="{% url 'index' %}" class="btn btn-info btn-md">Home</a>
-            </section>
+    <main class="container-fluid">
+        <div id="formulario_contacto" class="row">
+            <div class="col-12">
+                <h2>Contacto</h2>
+                    <hr/>
+                <form id="contact" action="" method="post" class="col-12 text-center">
+                    <div class="col-xs-12">
+                        <label id="label_nombre_completo" for="id_nombre_completo" class="col-2 text-left">Nombre y Apellido</label>
+                        <input type="text" nombre="nombre" id="id_nombre_completo" />
+                    </div>
+                    <div class="col-xs-12">
+                        <label id="label_email" for="id_email" class="col-2 text-left">EMAIL</label>
+                        <input type="text" name="mail" id="id_email"  />
+                    </div>
+                    <div class="col-xs-12">
+                        <label id="label_fecha" for="id_fecha" class="col-2 text-left">Fecha Limite de Entrega</label>
+                        <input id="id_fecha" type="text" name="fecha" />
+                    </div>
+                    <div class="col-xs-12">
+                        <label id="label_mensaje" for="id_mensaje" class="col-2 text-left">Consulta</label>
+                        <textarea id="id_mensaje" name="consulta"></textarea>
+                    </div>
+                    <button type="submit" class="col-3 btn btn-primary bt-form">Enviar</button>
+                </form>
+            </div>
         </div>
     </main>
 {% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'vistaprevia/js/jquery-ui.js' %}"></script>
+    <script>
+        $("#id_fecha").datepicker({
+            inline: true
+        });
+    </script>
+{% endblock scripts %}

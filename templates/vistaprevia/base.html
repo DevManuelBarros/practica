@@ -16,11 +16,17 @@
     <meta name="description" content="{{ descripcion }}" />
     <script type="text/javascript" src="{% static 'vistaprevia/js/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'vistaprevia/js/bootstrap.js' %}"></script>
+    <link href="{% static 'vistaprevia/css/jquery-ui.css' %}" rel="stylesheet" />
 </head>
 <body>
 {% block contenedor %}
 
 {% endblock contenedor %}
+
+{% block scripts %}
+
+{% endblock scripts %}
+
 </body>
 </html>
 
