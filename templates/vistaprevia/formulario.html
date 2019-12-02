@@ -1,0 +1,42 @@
+{% extends "vistaprevia/plantilla.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Página de Contacto</h1>
+        </div>
+    </div>
+
+    <main class="container-fluid">
+        <div id="formulario_contacto" class="row">
+            <div class="col-12">
+                <h2>Contacto</h2>
+            <hr/>
+                <form class="col-12 text-center" action="{% url 'cargar' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.categoria.errors }} {{ form.categoria.label_tag }}
+                    <select name="categoria" required="" id="id_categoria">
+                        <option value="1">Ciencia</option>
+                        <option value="2">Tecnologia</option>
+                        <option value="3">Lengua</option>
+                    </select> 
+                        {{ form.producto.errors }} {{ form.producto.label_tag}} {{ form.producto }}
+                        {{ form.fecha_publicacion.errors }} {{ form.fecha_publicacion.label_tag}} {{ form.fecha_publicacion}}
+                        {{ form.ruta_imagen.errors }} {{ form.ruta_imagen.label_tag }} {{ form.ruta_imagen }}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+    
+    {% block scripts %}
+    <script src="{% static 'vistaprevia/js/jquery-ui.js' %}"></script>
+    <script>
+        $("#id_fecha_publicacion").datepicker({
+            inline: true
+        });
+    </script>
+    {% endblock scripts %}
